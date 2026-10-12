@@ -1,0 +1,7 @@
+{
+  "name": "HIIT 21 — Plataforma Premium de Membros",
+  "description": "Área de membros oficial do programa HIIT 21 com biblioteca de 75 treinos, desafio guiado de 21 dias e bônus exclusivos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
