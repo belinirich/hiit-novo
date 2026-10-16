@@ -76,7 +76,7 @@ export const Profile: React.FC = () => {
           </li>
           <li className="flex items-center gap-2 p-2.5 bg-[#F2FAF3] rounded-xl border border-[#2DA23B]/20">
             <CheckCircle2 className="w-4 h-4 text-[#2DA23B] shrink-0" />
-            Os 4 Bônus digitais completos (Receitas, Planner, Alongamento e Hábitos)
+            Os 3 Bônus digitais completos (Receitas, Planner e Hábitos)
           </li>
         </ul>
       </div>

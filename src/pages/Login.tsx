@@ -56,7 +56,7 @@ export const Login: React.FC = () => {
             </li>
             <li className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#2DA23B]" />
-              Guias de alongamentos e consistência
+              Guia definitivo de consistência e hábitos
             </li>
           </ul>
         </div>

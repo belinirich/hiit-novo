@@ -72,7 +72,7 @@ export const CHALLENGE_DAYS: ChallengeDay[] = [
     focus: 'Circulação Suave & Soltura Articular',
     intensity: 'Leve',
     instruction: 'Sessão leve para retirar a rigidez muscular, melhorar o fluxo sanguíneo e preparar seu corpo para a próxima fase.',
-    tips: 'Aproveite para consultar o Bônus 3 (Guia de Alongamentos) na plataforma.'
+    tips: 'Aproveite para descansar, fazer respirações calmas e manter uma boa hidratação.'
   },
   {
     day: 7,

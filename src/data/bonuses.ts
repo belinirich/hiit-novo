@@ -37,16 +37,15 @@ export const BONUSES_LIST: BonusMeta[] = [
     id: 'alongamentos',
     numberLabel: 'BÔNUS 03',
     title: 'Guia de Alongamentos & Mobilidade',
-    subtitle: 'Manual postural com 8 sequências essenciais para aliviar tensões e prevenir dores',
-    description: 'A flexibilidade e a mobilidade articular são os alicerces para agachar melhor, evitar lesões nos joelhos e aliviar o cansaço na lombar após dias longos de trabalho.',
-    readTime: '10 min de leitura · 8 posturas guiadas',
+    subtitle: 'Galeria visual oficial com 40 posturas e rotinas ilustradas',
+    description: 'Manual visual completo com 40 posturas e rotinas de alongamento e mobilidade para alívio de dores, aumento de flexibilidade e recuperação muscular pós-treino.',
+    readTime: '40 posturas e rotinas ilustradas',
     category: 'Recuperação & Postura',
     features: [
-      '8 posturas com passo a passo claro',
-      'Tempo recomendado para cada movimento',
-      'Cuidados posturais indispensáveis',
-      'Erros comuns e como corrigi-los',
-      'Rotina ideal para dias de recuperação ativa'
+      'Visualização das posturas em alta definição',
+      'Modo tela cheia com ampliação ao clicar',
+      'Rotinas para pernas, coluna, braços e corpo inteiro',
+      'Filtros por categorias e busca rápida'
     ]
   },
   {
@@ -450,165 +449,56 @@ export const RECIPES_DATA: Recipe[] = [
   }
 ];
 
-// Dados completos do Guia de Alongamentos & Mobilidade
-export interface StretchMovement {
+// Modelo dos 40 slots do Guia de Alongamentos & Mobilidade HIIT 21
+export interface StretchSlot {
   id: string;
+  postureNumber: number;
   name: string;
-  targetArea: string;
-  suggestedDuration: string;
-  stepByStep: string[];
-  postureAttention: string;
-  commonMistakes: string[];
+  category: 'inferiores' | 'coluna' | 'superiores' | 'rotinas';
+  suggestedDuration?: string;
+  imageUrl?: string;
 }
 
-export const STRETCH_MOVEMENTS: StretchMovement[] = [
-  {
-    id: 'stretch-01',
-    name: 'Alongamento de Isquiotibiais (Posterior de Coxa)',
-    targetArea: 'Posterior da coxa e parte de trás do joelho',
-    suggestedDuration: '30 a 45 segundos por perna',
-    stepByStep: [
-      'Fique em pé com os pés na largura do quadril.',
-      'Dê um passo curto à frente com a perna direita e apoie apenas o calcanhar no chão, mantendo a ponta do pé voltada para o teto.',
-      'Flexione levemente o joelho da perna esquerda e projete o quadril para trás, inclinando o tronco reto à frente.',
-      'Apoie as mãos sobre a coxa esquerda (nunca sobre o joelho direito).',
-      'Sinta o alongamento confortável na parte de trás da coxa direita e respire fundo.'
-    ],
-    postureAttention: 'Mantenha a coluna lombar reta e peito aberto. Não curve as costas para tentar encostar na ponta do pé.',
-    commonMistakes: [
-      'Curvar as costas em excesso para alcançar o pé, perdendo a tensão na perna.',
-      'Pressionar as mãos diretamente sobre a patela do joelho estendido.',
-      'Prender o ar durante o tempo de sustentação.'
-    ]
-  },
-  {
-    id: 'stretch-02',
-    name: 'Alongamento de Quadríceps em Pé',
-    targetArea: 'Parte anterior da coxa e flexores do quadril',
-    suggestedDuration: '30 a 40 segundos por lado',
-    stepByStep: [
-      'Fique em pé próximo a uma parede ou cadeira para apoio de equilíbrio.',
-      'Dobre o joelho direito levando o calcanhar em direção ao glúteo.',
-      'Segure o tornozelo ou o peito do pé direito com a mão do mesmo lado.',
-      'Mantenha os dois joelhos alinhados lado a lado e empurre a pelve levemente para a frente.',
-      'Sinta a parte da frente da coxa se alongar sem arquear a coluna.'
-    ],
-    postureAttention: 'Evite afastar o joelho para o lado. Os dois joelhos devem permanecer próximos e paralelos.',
-    commonMistakes: [
-      'Projetar a lombar para frente criando hiperlordose.',
-      'Puxar o pé com força excessiva comprimindo a articulação do joelho.',
-      'Inclinar o tronco para a frente perdendo o foco no quadríceps.'
-    ]
-  },
-  {
-    id: 'stretch-03',
-    name: 'Postura da Criança com Soltura de Ombros',
-    targetArea: 'Lombar, grande dorsal, ombros e glúteos',
-    suggestedDuration: '45 a 60 segundos com respiração profunda',
-    stepByStep: [
-      'Ajoelhe-se no colchonete ou tapete com os joelhos afastados na largura do quadril e os dedões dos pés se tocando atrás.',
-      'Sente-se sobre os calcanhares e caminhe com as mãos para a frente no chão.',
-      'Abaixe o peito em direção ao solo e apoie a testa suavemente no colchonete.',
-      'Estenda os braços à frente sentindo as costas e as costelas se expandirem a cada respiração.'
-    ],
-    postureAttention: 'Relaxe o pescoço e a mandíbula por completo. Deixe o peso da gravidade afundar o peito suavemente.',
-    commonMistakes: [
-      'Tensionar os ombros em direção às orelhas em vez de relaxá-los.',
-      'Levantar o quadril dos calcanhares de forma abrupta.',
-      'Fazer respiração curta e superficial.'
-    ]
-  },
-  {
-    id: 'stretch-04',
-    name: 'Abertura de Peitoral e Ombros no Batente ou Parede',
-    targetArea: 'Peitoral maior, deltoide anterior e peitoral menor',
-    suggestedDuration: '30 segundos por lado',
-    stepByStep: [
-      'Fique de pé ao lado de um batente de porta ou quina de parede.',
-      'Apoie o antebraço direito e a palma da mão na parede, com o cotovelo dobrado em 90 graus na altura do ombro.',
-      'Dê um passo suave à frente com a perna direita e gire o tronco lentamente para o lado esquerdo.',
-      'Sinta a abertura confortável e o alívio na musculatura do peito.'
-    ],
-    postureAttention: 'Mantenha o ombro abaixado, sem encolher o pescoço. O peitoral deve se abrir sem puxar o ombro para frente.',
-    commonMistakes: [
-      'Posicionar o cotovelo muito acima da linha dos ombros.',
-      'Girar o tronco bruscamente dando trancos articulares.',
-      'Perder a firmeza do core e arquear as costas.'
-    ]
-  },
-  {
-    id: 'stretch-05',
-    name: 'Mobilidade de Quadril em Posição de Afundo Baixo (Lunge)',
-    targetArea: 'Psoas, flexores profundos do quadril e virilha',
-    suggestedDuration: '35 a 45 segundos por perna',
-    stepByStep: [
-      'Dê um passo largo à frente com a perna direita e apoie o joelho esquerdo no colchonete.',
-      'Mantenha o joelho direito a 90 graus, alinhado exatamente sobre o tornozelo.',
-      'Apoie as mãos sobre a coxa direita e projete o quadril suavemente para baixo e para a frente.',
-      'Sinta a virilha e a parte superior da coxa esquerda se abrirem com suavidade.'
-    ],
-    postureAttention: 'Mantenha o tronco alto e ereto. Contraia suavemente o glúteo da perna de trás para aprofundar o alongamento.',
-    commonMistakes: [
-      'Deixar o joelho da frente ultrapassar excessivamente a linha da ponta do pé.',
-      'Colapsar o peso sobre a patela traseira sem amortecimento no chão.',
-      'Desalinhar os quadris girando a bacia para fora.'
-    ]
-  },
-  {
-    id: 'stretch-06',
-    name: 'Alongamento Glúteo Figura 4 (Deitado no Solo)',
-    targetArea: 'Glúteo médio, glúteo máximo e músculo piriforme',
-    suggestedDuration: '40 segundos por lado',
-    stepByStep: [
-      'Deite-se de costas no colchonete com os joelhos dobrados e pés no chão.',
-      'Cruze o tornozelo direito sobre o joelho esquerdo, formando o desenho do número 4.',
-      'Passe as mãos por trás da coxa esquerda e puxe a perna em direção ao peito.',
-      'Mantenha a cabeça e os ombros apoiados e relaxados no solo.',
-      'Sinta o alívio profundo no centro do glúteo direito.'
-    ],
-    postureAttention: 'Mantenha a cabeça repousada no chão. Se o pescoço tensionar, coloque uma almofada baixa sob a nuca.',
-    commonMistakes: [
-      'Tirar a cabeça e os ombros do chão forçando a cervical.',
-      'Torcer o pé dobrado para os lados em vez de manter o tornozelo firme.',
-      'Puxar com força excessiva gerando desconforto na articulação coxofemoral.'
-    ]
-  },
-  {
-    id: 'stretch-07',
-    name: 'Torção Suave de Coluna no Solo',
-    targetArea: 'Mobilidade torácica, oblíquos e lombar',
-    suggestedDuration: '30 a 45 segundos por lado',
-    stepByStep: [
-      'Deite-se de costas com os braços abertos em cruz na linha dos ombros.',
-      'Dobre os joelhos a 90 graus e traga-os suavemente até o abdômen.',
-      'Deixe os dois joelhos caírem juntos para o lado direito até tocarem o chão.',
-      'Vire a cabeça suavemente para o lado esquerdo e feche os olhos respirando pelo abdômen.',
-      'Sinta a rotação agradável e descompressiva ao longo de toda a coluna.'
-    ],
-    postureAttention: 'Procure manter os dois ombros em contato com o chão enquanto os joelhos descansam no lado oposto.',
-    commonMistakes: [
-      'Descolar o ombro oposto completamente do chão.',
-      'Forçar a queda das pernas com movimento rápido.',
-      'Respirar de forma tensa e curta.'
-    ]
-  },
-  {
-    id: 'stretch-08',
-    name: 'Alongamento de Panturrilhas na Parede',
-    targetArea: 'Gastrocnêmio, sóleo e tendão calcâneo (de Aquiles)',
-    suggestedDuration: '30 segundos por perna',
-    stepByStep: [
-      'Fique de pé de frente para a parede a cerca de dois passos de distância.',
-      'Apoie as palmas das mãos na parede na altura do peito.',
-      'Dê um passo à frente com a perna direita (flexionada) e estenda a perna esquerda totalmente para trás.',
-      'Pressione o calcanhar esquerdo firmemente contra o chão e incline o corpo ligeiramente para a frente.',
-      'Sinta o alongamento preciso na panturrilha da perna traseira.'
-    ],
-    postureAttention: 'O calcanhar de trás precisa estar totalmente colado ao solo com a ponta do pé apontando para a frente.',
-    commonMistakes: [
-      'Virar a ponta do pé de trás para fora, perdendo a linha de tensão da panturrilha.',
-      'Tirar o calcanhar do chão durante o movimento.',
-      'Curvar as costas para a frente.'
-    ]
-  }
+// 40 slots oficiais organizados com os links oficiais das 40 páginas
+export const STRETCH_SLOTS: StretchSlot[] = [
+  { id: 'stretch-01', postureNumber: 1, name: 'Alongamento de Pescoço & Trapézio', category: 'superiores', imageUrl: 'https://i.postimg.cc/9QXzZMpp/guia-alongamento-pagina-01.png' },
+  { id: 'stretch-02', postureNumber: 2, name: 'Alongamento Lateral de Pescoço', category: 'superiores', imageUrl: 'https://i.postimg.cc/nhVMBzkd/guia-alongamento-pagina-02.png' },
+  { id: 'stretch-03', postureNumber: 3, name: 'Soltura e Rotação de Ombros', category: 'superiores', imageUrl: 'https://i.postimg.cc/jSqCP5Xg/guia-alongamento-pagina-03.png' },
+  { id: 'stretch-04', postureNumber: 4, name: 'Alongamento Peitoral Aberto', category: 'superiores', imageUrl: 'https://i.postimg.cc/Z5Y0pRcs/guia-alongamento-pagina-04.png' },
+  { id: 'stretch-05', postureNumber: 5, name: 'Respiração Durante o Alongamento', category: 'rotinas', suggestedDuration: '4 a 6 ciclos calmos', imageUrl: 'https://i.postimg.cc/QdNV1tbz/guia-alongamento-pagina-05.png' },
+  { id: 'stretch-06', postureNumber: 6, name: 'Alongamento de Deltoides & Ombro Cruzado', category: 'superiores', imageUrl: 'https://i.postimg.cc/DwfmLZgH/guia-alongamento-pagina-06.png' },
+  { id: 'stretch-07', postureNumber: 7, name: 'Extensão de Braços e Costas', category: 'superiores', imageUrl: 'https://i.postimg.cc/fRWkmLK1/guia-alongamento-pagina-07.png' },
+  { id: 'stretch-08', postureNumber: 8, name: 'Alongamento de Tríceps', category: 'superiores', suggestedDuration: '20 a 30s cada lado', imageUrl: 'https://i.postimg.cc/Gm39G2QZ/guia-alongamento-pagina-08.png' },
+  { id: 'stretch-09', postureNumber: 9, name: 'Alongamento de Bíceps e Peitoral', category: 'superiores', imageUrl: 'https://i.postimg.cc/QdNV1tb2/guia-alongamento-pagina-09.png' },
+  { id: 'stretch-10', postureNumber: 10, name: 'Mobilidade de Punhos e Antebraços', category: 'superiores', suggestedDuration: '15 a 20s cada lado', imageUrl: 'https://i.postimg.cc/x1jqMC5V/guia-alongamento-pagina-10.png' },
+  { id: 'stretch-11', postureNumber: 11, name: 'Soltura de Dedos e Palma', category: 'superiores', imageUrl: 'https://i.postimg.cc/g2cr8JsW/guia-alongamento-pagina-11.png' },
+  { id: 'stretch-12', postureNumber: 12, name: 'Postura da Criança (Balasana)', category: 'coluna', suggestedDuration: '30 a 45s', imageUrl: 'https://i.postimg.cc/13R4wtBs/guia-alongamento-pagina-12.png' },
+  { id: 'stretch-13', postureNumber: 13, name: 'Gato e Vaca (Mobilidade da Coluna)', category: 'coluna', suggestedDuration: '6 a 8 ciclos', imageUrl: 'https://i.postimg.cc/3xrWmR13/guia-alongamento-pagina-13.png' },
+  { id: 'stretch-14', postureNumber: 14, name: 'Rotação Torácica em Quatro Apoios', category: 'coluna', suggestedDuration: '6 de cada lado', imageUrl: 'https://i.postimg.cc/Jz7tZnxr/guia-alongamento-pagina-14.png' },
+  { id: 'stretch-15', postureNumber: 15, name: 'Cachorro Olhando para Baixo', category: 'coluna', imageUrl: 'https://i.postimg.cc/bwYdkJgw/guia-alongamento-pagina-15.png' },
+  { id: 'stretch-16', postureNumber: 16, name: 'Alongamento da Cobra / Esfinge', category: 'coluna', imageUrl: 'https://i.postimg.cc/NjGLmMDf/guia-alongamento-pagina-16.png' },
+  { id: 'stretch-17', postureNumber: 17, name: 'Rotação Lombar Deitada', category: 'coluna', suggestedDuration: '20 a 30s cada lado', imageUrl: 'https://i.postimg.cc/8zksM54C/guia-alongamento-pagina-17.png' },
+  { id: 'stretch-18', postureNumber: 18, name: 'Torção Sentada para Coluna e Quadril', category: 'coluna', suggestedDuration: '20s cada lado', imageUrl: 'https://i.postimg.cc/zGdvjr21/guia-alongamento-pagina-18.png' },
+  { id: 'stretch-19', postureNumber: 19, name: 'Flexor do Quadril em Afundo', category: 'inferiores', suggestedDuration: '20 a 30s cada lado', imageUrl: 'https://i.postimg.cc/0ytjfsXv/guia-alongamento-pagina-19.png' },
+  { id: 'stretch-20', postureNumber: 20, name: 'Alongamento do Pombo para Glúteo', category: 'inferiores', imageUrl: 'https://i.postimg.cc/13WXHQ7P/guia-alongamento-pagina-20.png' },
+  { id: 'stretch-21', postureNumber: 21, name: 'Glúteo em 4 Deitado', category: 'inferiores', imageUrl: 'https://i.postimg.cc/T3k196Nf/guia-alongamento-pagina-21.png' },
+  { id: 'stretch-22', postureNumber: 22, name: 'Alongamento Borboleta (Adutores)', category: 'inferiores', imageUrl: 'https://i.postimg.cc/4x8y5g2X/guia-alongamento-pagina-22.png' },
+  { id: 'stretch-23', postureNumber: 23, name: 'Afundo Lateral para Virilha', category: 'inferiores', imageUrl: 'https://i.postimg.cc/6pHq0Xbp/guia-alongamento-pagina-23.png' },
+  { id: 'stretch-24', postureNumber: 24, name: 'Alongamento de Quadríceps em Pé', category: 'inferiores', imageUrl: 'https://i.postimg.cc/4x8y5g23/guia-alongamento-pagina-24.png' },
+  { id: 'stretch-25', postureNumber: 25, name: 'Quadríceps Deitado Lateral', category: 'inferiores', imageUrl: 'https://i.postimg.cc/SxZRrh1s/guia-alongamento-pagina-25.png' },
+  { id: 'stretch-26', postureNumber: 26, name: 'Posterior de Coxa em Pé com Apoio', category: 'inferiores', suggestedDuration: '20s cada lado', imageUrl: 'https://i.postimg.cc/JzT0qLYt/guia-alongamento-pagina-26.png' },
+  { id: 'stretch-27', postureNumber: 27, name: 'Posterior de Coxa Sentado', category: 'inferiores', imageUrl: 'https://i.postimg.cc/DwC0gTp8/guia-alongamento-pagina-27.png' },
+  { id: 'stretch-28', postureNumber: 28, name: 'Alongamento de Panturrilha na Parede', category: 'inferiores', imageUrl: 'https://i.postimg.cc/NjNF4cCK/guia-alongamento-pagina-28.png' },
+  { id: 'stretch-29', postureNumber: 29, name: 'Mobilidade de Tornozelo na Parede', category: 'inferiores', suggestedDuration: '8 reps cada lado', imageUrl: 'https://i.postimg.cc/y8fxPHpg/guia-alongamento-pagina-29.png' },
+  { id: 'stretch-30', postureNumber: 30, name: 'Soltura e Rotação Articular dos Pés', category: 'inferiores', imageUrl: 'https://i.postimg.cc/vZPTzs2x/guia-alongamento-pagina-30.png' },
+  { id: 'stretch-31', postureNumber: 31, name: 'Rotina Pré-Treino de Mobilidade', category: 'rotinas', suggestedDuration: '5 Minutos Dinâmicos', imageUrl: 'https://i.postimg.cc/YCX03HDm/guia-alongamento-pagina-31.png' },
+  { id: 'stretch-32', postureNumber: 32, name: 'Rotina para Membros Superiores', category: 'rotinas', suggestedDuration: '6 Minutos', imageUrl: 'https://i.postimg.cc/L8y5TpQ1/guia-alongamento-pagina-32.png' },
+  { id: 'stretch-33', postureNumber: 33, name: 'Rotina Pós-Treino para Desacelerar', category: 'rotinas', suggestedDuration: '8 a 10 Minutos', imageUrl: 'https://i.postimg.cc/bw6rThVn/guia-alongamento-pagina-33.png' },
+  { id: 'stretch-34', postureNumber: 34, name: 'Rotina Express: Pernas e Glúteos', category: 'rotinas', suggestedDuration: '8 Minutos', imageUrl: 'https://i.postimg.cc/3xLNBTfp/guia-alongamento-pagina-34.png' },
+  { id: 'stretch-35', postureNumber: 35, name: 'Rotina para Alívio da Lombar', category: 'rotinas', suggestedDuration: '5 a 7 Minutos', imageUrl: 'https://i.postimg.cc/MpsHDS3V/guia-alongamento-pagina-35.png' },
+  { id: 'stretch-36', postureNumber: 36, name: 'Pausa Ativa de 5 Minutos', category: 'rotinas', suggestedDuration: '5 Minutos', imageUrl: 'https://i.postimg.cc/g2MjDWtv/guia-alongamento-pagina-36.png' },
+  { id: 'stretch-37', postureNumber: 37, name: 'Rotina Matinal (Despertar o Corpo)', category: 'rotinas', suggestedDuration: '5 Minutos', imageUrl: 'https://i.postimg.cc/K89jN2pP/guia-alongamento-pagina-37.png' },
+  { id: 'stretch-38', postureNumber: 38, name: 'Rotina Noturna (Para Relaxar)', category: 'rotinas', suggestedDuration: '6 Minutos', imageUrl: 'https://i.postimg.cc/7ZBhVkt1/guia-alongamento-pagina-38.png' },
+  { id: 'stretch-39', postureNumber: 39, name: 'Sequência Restaurativa Completa', category: 'rotinas', imageUrl: 'https://i.postimg.cc/52Py3VKq/guia-alongamento-pagina-39.png' },
+  { id: 'stretch-40', postureNumber: 40, name: 'Monte Sua Rotina Personalizada', category: 'rotinas', suggestedDuration: '4 a 6 Alongamentos', imageUrl: 'https://i.postimg.cc/fbJLqr13/guia-alongamento-pagina-40.png' }
 ];

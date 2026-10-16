@@ -241,10 +241,10 @@ export const Dashboard: React.FC = () => {
             },
             {
               title: 'Meus Bônus',
-              desc: 'Alimentação, Planner, Alongamento e Hábitos',
+              desc: 'Alimentação, Planner e Consistência',
               icon: BookOpen,
               page: 'bonuses' as const,
-              count: '4 materiais'
+              count: '3 materiais'
             }
           ].map((item, idx) => (
             <div
